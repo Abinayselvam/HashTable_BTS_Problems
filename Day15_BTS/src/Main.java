@@ -19,14 +19,30 @@ public class Main {
         bst.add(95);
 
         System.out.println(
-                "\nInorder Traversal:"
+                "\nBST Inorder Traversal:"
         );
 
         bst.display();
 
-        System.out.println(
-                "\n\nSize of BST: "
-                        + bst.size()
-        );
+        // Search value
+        int searchValue = 63;
+
+        boolean found =
+                bst.search(searchValue);
+
+        if (found) {
+
+            System.out.println(
+                    "\n\n" + searchValue
+                            + " found in BST"
+            );
+        }
+        else {
+
+            System.out.println(
+                    "\n\n" + searchValue
+                            + " not found in BST"
+            );
+        }
     }
 }
