@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Day15/Day15.iml" filepath="$PROJECT_DIR$/Day15/Day15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day15_BTS/Day15_BTS.iml" filepath="$PROJECT_DIR$/Day15_BTS/Day15_BTS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day15/Day15_HashTable.iml" filepath="$PROJECT_DIR$/Day15/Day15_HashTable.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/HashTable_BTS_Problems.iml" filepath="$PROJECT_DIR$/.idea/HashTable_BTS_Problems.iml" />
     </modules>
   </component>
