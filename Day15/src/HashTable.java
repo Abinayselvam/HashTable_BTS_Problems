@@ -14,7 +14,7 @@ public class HashTable<K, V> {
         }
     }
 
-    // Hash Function
+    // Hash function
     private int hash(K key) {
 
         return Math.abs(
@@ -22,7 +22,7 @@ public class HashTable<K, V> {
         ) % size;
     }
 
-    // Add key-value pair
+    // Add word
     public void add(K key, V value) {
 
         int index = hash(key);
@@ -30,7 +30,15 @@ public class HashTable<K, V> {
         table[index].add(key, value);
     }
 
-    // Display frequencies
+    // Remove word
+    public void remove(K key) {
+
+        int index = hash(key);
+
+        table[index].remove(key);
+    }
+
+    // Display
     public void display() {
 
         for (int i = 0; i < size; i++) {
