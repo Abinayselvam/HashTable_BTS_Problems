@@ -1,6 +1,6 @@
 public class HashTable<K, V> {
 
-    private final int size = 10;
+    private final int size = 11;
 
     LinkedList<K, V>[] table;
 
@@ -14,13 +14,15 @@ public class HashTable<K, V> {
         }
     }
 
-    // Hash function
+    // Hash Function
     private int hash(K key) {
 
-        return Math.abs(key.hashCode()) % size;
+        return Math.abs(
+                key.hashCode()
+        ) % size;
     }
 
-    // Add word
+    // Add key-value pair
     public void add(K key, V value) {
 
         int index = hash(key);
@@ -28,12 +30,19 @@ public class HashTable<K, V> {
         table[index].add(key, value);
     }
 
-    // Display all
+    // Display frequencies
     public void display() {
 
-        for (LinkedList<K, V> list : table) {
+        for (int i = 0; i < size; i++) {
 
-            list.display();
+            if (table[i].head != null) {
+
+                System.out.println(
+                        "\nBucket " + i + ":"
+                );
+
+                table[i].display();
+            }
         }
     }
 }
