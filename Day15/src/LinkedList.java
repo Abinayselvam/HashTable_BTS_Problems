@@ -1,10 +1,10 @@
-public class LinkedList<K,V> {
-    MapNode<K,V> head;
+public class LinkedList<K, V> {
 
-    // Add node
+    MapNode<K, V> head;
+
+    // Add or update
     public void add(K key, V value) {
 
-        // If key already exists -> increment
         MapNode<K, V> temp = head;
 
         while (temp != null) {
@@ -14,7 +14,8 @@ public class LinkedList<K,V> {
                 Integer count =
                         (Integer) temp.value;
 
-                temp.value = (V) Integer.valueOf(count + 1);
+                temp.value =
+                        (V) Integer.valueOf(count + 1);
 
                 return;
             }
@@ -30,6 +31,35 @@ public class LinkedList<K,V> {
 
         head = newNode;
     }
+
+    // Remove node
+    public void remove(K key) {
+
+        if (head == null) {
+            return;
+        }
+
+        // Remove head
+        if (head.key.equals(key)) {
+
+            head = head.next;
+            return;
+        }
+
+        MapNode<K, V> temp = head;
+
+        while (temp.next != null) {
+
+            if (temp.next.key.equals(key)) {
+
+                temp.next = temp.next.next;
+                return;
+            }
+
+            temp = temp.next;
+        }
+    }
+
     // Display
     public void display() {
 

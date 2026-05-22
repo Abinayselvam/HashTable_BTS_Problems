@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
+
         System.out.println(
                 "Welcome to Hash Table Program"
         );
@@ -10,10 +11,9 @@ public class Main {
                         "but because they keep putting themselves deliberately " +
                         "into paranoid avoidable situations";
 
-        // Convert to lowercase
-        paragraph = paragraph.toLowerCase();
+        paragraph =
+                paragraph.toLowerCase();
 
-        // Split into words
         String[] words =
                 paragraph.split(" ");
 
@@ -26,9 +26,17 @@ public class Main {
             hashTable.add(word, 1);
         }
 
-        // Display result
         System.out.println(
-                "\nWord Frequencies:"
+                "\nBefore Removing:"
+        );
+
+        hashTable.display();
+
+        // Remove avoidable
+        hashTable.remove("avoidable");
+
+        System.out.println(
+                "\nAfter Removing 'avoidable':"
         );
 
         hashTable.display();
