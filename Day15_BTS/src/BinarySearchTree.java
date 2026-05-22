@@ -1,5 +1,3 @@
-class BinarySearchTree<K extends Comparable<K>> {
-
     private INode<K> root;
 
     // Add node
@@ -19,7 +17,7 @@ class BinarySearchTree<K extends Comparable<K>> {
             return new BinaryNode<>(key);
         }
 
-        // Go left
+        // Left subtree
         if (key.compareTo(current.getKey()) < 0) {
 
             current.setLeft(
@@ -30,7 +28,7 @@ class BinarySearchTree<K extends Comparable<K>> {
             );
         }
 
-        // Go right
+        // Right subtree
         else if (key.compareTo(current.getKey()) > 0) {
 
             current.setRight(
@@ -44,7 +42,7 @@ class BinarySearchTree<K extends Comparable<K>> {
         return current;
     }
 
-    // Inorder Traversal
+    // Display inorder
     public void display() {
 
         inorder(root);
@@ -62,5 +60,26 @@ class BinarySearchTree<K extends Comparable<K>> {
 
             inorder(node.getRight());
         }
+    }
+
+    // Size method
+    public int size() {
+
+        return sizeRecursive(root);
+    }
+
+    private int sizeRecursive(
+            INode<K> node) {
+
+        // Base case
+        if (node == null) {
+
+            return 0;
+        }
+
+        // Count current + left + right
+        return 1
+                + sizeRecursive(node.getLeft())
+                + sizeRecursive(node.getRight());
     }
 }
